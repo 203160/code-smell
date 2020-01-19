@@ -12,6 +12,14 @@ public class CustomerTest {
 
     @Test
     public void customerTest() {
-        assertThat(true, is(true));
+        Account account = getPremiumAccount(5);
+        Customer customer = CustomerTestUtils.getPersonCustomer(account);
+        assertThat(customer.getName(), is("danix"));
+        assertThat(customer.getEmail(), is("dan@mail.com"));
+    }
+
+    private Account getPremiumAccount(final int daysOverdrawn) {
+        AccountType normal = new AccountType(true);
+        return new Account(normal, daysOverdrawn);
     }
 }

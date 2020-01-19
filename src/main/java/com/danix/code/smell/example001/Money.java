@@ -36,10 +36,10 @@ public class Money {
     }
 
     @Nonnull
-    public Money substract(@Nonnull Money money) throws Exception {
+    public Money substract(@Nonnull Money money) {
         checkNotNull(money);
         if (!money.getCurrency().equals(currency)) {
-            throw new Exception("Can't substract different currencies!");
+            throw new MyRuntimeException("Can't substract different currencies!");
         }
         return new Money(this.amount - money.amount, currency);
     }
