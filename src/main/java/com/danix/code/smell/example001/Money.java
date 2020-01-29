@@ -39,7 +39,7 @@ public class Money {
     public Money substract(@Nonnull Money money) {
         checkNotNull(money);
         if (!money.getCurrency().equals(currency)) {
-            throw new IllegalArgumentException(String.format("Currencies oo nit match"));
+            throw new IllegalArgumentException("Currencies do not match");
         }
         return new Money(this.amount - money.amount, currency);
     }
