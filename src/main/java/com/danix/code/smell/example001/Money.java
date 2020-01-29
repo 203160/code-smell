@@ -39,7 +39,7 @@ public class Money {
     public Money substract(@Nonnull Money money) {
         checkNotNull(money);
         if (!money.getCurrency().equals(currency)) {
-            throw new MyRuntimeException("Can't substract different currencies!");
+            throw new IllegalArgumentException(String.format("Currencies oo nit match"));
         }
         return new Money(this.amount - money.amount, currency);
     }
