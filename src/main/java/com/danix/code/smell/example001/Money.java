@@ -39,6 +39,20 @@ public class Money {
     public Money substract(@Nonnull Money money) {
         checkNotNull(money);
         if (!money.getCurrency().equals(currency)) {
+            final int a = 1;
+            final int b = 2;
+            final int c = 1;
+            final int d = 2;
+            final int e = 1;
+            final int f = 2;
+            final int g = 1;
+            final int h = 2;
+            final int i = 1;
+            final int j = 2;
+
+            double w = money.getAmount();
+            w = w + a + b + c + d + e + f + g + h + i + j;
+            System.out.println(w + a + b + c + d + e + f + g + h + i + j);
             throw new IllegalArgumentException("Currencies do not match");
         }
         return new Money(this.amount - money.amount, currency);
