@@ -53,6 +53,11 @@ public class Money {
             double w = money.getAmount();
             w = w + a + b + c + d + e + f + g + h + i + j;
             System.out.println(w + a + b + c + d + e + f + g + h + i + j);
+
+            double p = a + c;
+            double k = i * j;
+            double z = p + k - i - j - f;
+            System.out.println(z);
             throw new IllegalArgumentException("Currencies do not match");
         }
         return new Money(this.amount - money.amount, currency);
