@@ -25,9 +25,15 @@ public class MoneyTest {
         Assert.assertThat(difference.getCurrency(), is(Money.EUR_CURRENCY));
     }
 
-    @Test(expected = RuntimeException.class)
+    /*@Test(expected = IllegalArgumentException.class)
     public void testSubstractDifferentCurrencies() throws Exception {
         Money.newEuro(20.0).substract(Money.newInstance(10.0, "USD"));
+    }*/
+
+    @Test
+    public void testSubstractDifferentCurrencies() throws Exception {
+        Money difference = Money.newEuro(20.0).substract(Money.newInstance(10.0, "USD"));
+        Assert.assertThat(difference.getAmount(), is(10.0));
     }
 
     @Test(expected= IllegalArgumentException.class)
