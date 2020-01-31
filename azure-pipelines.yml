@@ -31,7 +31,13 @@ steps:
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
     checkStyleRunAnalysis: true
+    codeCoverageToolOption: 'JaCoCo'
 
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
+
+- task: codecoveragecomparerbt@1
+  inputs:
+    codecoveragetarget: '85'
+    codecoveragemeasurementmethod: 'Line'
