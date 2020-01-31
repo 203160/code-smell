@@ -29,4 +29,13 @@ public class MoneyTest {
     public void testSubstractDifferentCurrencies() throws Exception {
         Money.newEuro(20.0).substract(Money.newInstance(10.0, "USD"));
     }
+
+    @Test(expected= IllegalArgumentException.class)
+    public void exceptionTest() {
+        throwIllegalArgumentException();
+    }
+
+    void throwIllegalArgumentException() {
+        throw new IllegalArgumentException("Currencies do not match");
+    }
 }
