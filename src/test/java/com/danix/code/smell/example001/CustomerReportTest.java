@@ -20,7 +20,7 @@ public class CustomerReportTest {
         Customer customer = getPersonCustomer(account);
         CustomerReport customerReport = new CustomerReport(customer, account);
         assertThat(customerReport.printCustomerDaysOverdrawn(),
-            is("danix dan Account: IBAN: RO023INGB434321431241, Days Overdrawn: 9"));
+            is("danix dan RO023INGB434321431241, Days Overdrawn: 9"));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class CustomerReportTest {
         Customer customer = getPersonCustomer(account);
         CustomerReport customerReport = new CustomerReport(customer, account);
         assertThat(customerReport.printCustomerMoney(),
-            is("danix dan Account: IBAN: RO023INGB434321431241, Money: 34.0"));
+            is("danix dan RO023INGB434321431241, Money: 34.0"));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class CustomerReportTest {
         Customer customer = getPersonCustomer(account);
         CustomerReport customerReport = new CustomerReport(customer, account);
         assertThat(customerReport.printCustomerAccount(),
-            is("Account: IBAN: RO023INGB434321431241, Money: 34.0, Account type: normal"));
+            is("RO023INGB434321431241, Money: 34.0, Account type: normal"));
     }
 
     @Test
@@ -47,7 +47,7 @@ public class CustomerReportTest {
         Customer customer = getPersonCustomer(account);
         CustomerReport customerReport = new CustomerReport(customer, account);
         assertThat(customerReport.printCustomerAccount(),
-            is("Account: IBAN: RO023INGB434321431241, Money: 34.0, Account type: premium"));
+            is("RO023INGB434321431241, Money: 34.0, Account type: premium"));
     }
 
     @Test
