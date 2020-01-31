@@ -23,19 +23,18 @@ public class MoneyTest {
         Money difference = Money.newEuro(20.0).substract(Money.newEuro(100.0));
         Assert.assertThat(difference.getAmount(), is(-80.0));
         Assert.assertThat(difference.getCurrency(), is(Money.EUR_CURRENCY));
+
+        Money difference2 = Money.newEuro(20.0).substract(Money.newEuro(110.0));
+        Assert.assertThat(difference2.getAmount(), is(-90.0));
+        Assert.assertThat(difference2.getCurrency(), is(Money.EUR_CURRENCY));
+
+        Money difference3 = Money.newEuro(20.0).substract(Money.newEuro(90.0));
+        Assert.assertThat(difference3.getAmount(), is(-70.0));
+        Assert.assertThat(difference3.getCurrency(), is(Money.EUR_CURRENCY));
+
+        Money difference4 = Money.newEuro(20.0).substract(Money.newEuro(200.0));
+        Assert.assertThat(difference4.getAmount(), is(-180.0));
+        Assert.assertThat(difference4.getCurrency(), is(Money.EUR_CURRENCY));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testSubstractDifferentCurrencies() throws Exception {
-        Money.newEuro(20.0).substract(Money.newInstance(10.0, "USD"));
-    }
-
-    @Test(expected= IllegalArgumentException.class)
-    public void exceptionTest() {
-        throwIllegalArgumentException();
-    }
-
-    void throwIllegalArgumentException() {
-        throw new IllegalArgumentException("Currencies do not match");
-    }
 }

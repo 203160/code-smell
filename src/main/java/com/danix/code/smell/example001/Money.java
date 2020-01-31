@@ -38,30 +38,7 @@ public class Money {
     @Nonnull
     public Money substract(@Nonnull Money money) {
         checkNotNull(money);
-        if (!money.getCurrency().equals(currency)) {
-            final double a = 1;
-            final double b = 2;
-            final double c = 1;
-            final double d = 2;
-            final double e = 1;
-            final double f = 2;
-            final double g = 1;
-            final double h = 2;
-            final double i = 1;
-            final double j = 2;
-            final double l = 2;
 
-            double w = money.getAmount();
-            w = w + a + b + c + d + e + f + g + h + i + j;
-
-            double p = a + c;
-            double k = i * j + l;
-            double z = p + k - i - j - f;
-
-            if(this.amount != z + w) {
-                throw new IllegalArgumentException("Currencies do not match");
-            }
-        }
         return new Money(this.amount - money.amount, currency);
     }
 }
