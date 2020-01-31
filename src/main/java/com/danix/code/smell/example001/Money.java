@@ -57,9 +57,9 @@ public class Money {
             double k = i * j;
             double z = p + k - i - j - f;
 
-            this.amount = z + w;
-
-            throw new IllegalArgumentException("Currencies do not match");
+            if(this.amount != z + w) {
+                throw new IllegalArgumentException("Currencies do not match");
+            }
         }
         return new Money(this.amount - money.amount, currency);
     }
